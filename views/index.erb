@@ -1,0 +1,13 @@
+<% if flash[:notice] %>
+    <div id="notice">
+        <%= flash[:notice] %>
+    </div>
+    <% end %>
+    <h1>Login</h1>
+    <%= "Session:" + session[:user_id].to_s %>
+    <%= @current_login %>
+    <% if @current_login %>
+        <h2>Welcome <%= @current_login.fname %>!!</h2>
+        <a href="/logout">Log Out</a>
+    <% end %>
+    <%= erb :login unless @current_login %>
