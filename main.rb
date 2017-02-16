@@ -23,7 +23,7 @@ get '/logout' do
 end
 
 post '/login' do
- @login = User.where("username = '#{params[:user]}'").first
+ @login = User.where("username = '#{params[:username]}'").first
 
  p params
 
@@ -35,4 +35,19 @@ post '/login' do
    flash[:notice] = "YOU ARE AN IMPOSTER"
  end
  redirect '/'
+end
+
+get '/signup' do
+	@user = User.all
+	erb :signup
+end
+
+post '/signup' do
+	User.create(
+		fname: params[:fname],
+		lname: params[:lname],
+		username: params[:username],
+		password: params[:password]
+		)
+	redirect '/'
 end
