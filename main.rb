@@ -25,16 +25,21 @@ end
 post '/login' do
  @login = User.where("username = '#{params[:username]}'").first
 
- p params
+ p params, @login
 
- if @login && @login.password == params[:password]
+  if @login && @login.password == params[:password]
   # "WELCOME #{@user.fname}!"
    session[:user_id] = @login.id
    flash[:notice] = "You successfully logged in!"
  else
    flash[:notice] = "YOU ARE AN IMPOSTER"
+   @login = nil
  end
- redirect '/profile'
+ 	if @login && @login.admin
+ 		redirect '/database'
+ 	else
+ 		redirect '/profile'
+end
 end
 
 get '/signup' do
