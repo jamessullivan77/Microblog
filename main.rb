@@ -10,9 +10,9 @@ enable :sessions
 
 
 get '/' do
-	 @login = User.all
-	 @current_login = session[:user_id] && User.find(session[:user_id])
- 	p @current_login
+ @login = User.all
+ @current_login = session[:user_id] && User.find(session[:user_id])
+ p @current_login
  erb :index
 end
 
@@ -20,13 +20,6 @@ get '/logout' do
  session.destroy
  flash[:notice] = "You are now logged out"
  redirect '/'
-end
-
-get '/profile' do
-	 @login = User.all
-	 @current_login = session[:user_id] && User.find(session[:user_id])
- 	p @current_login
-	erb :profile
 end
 
 post '/login' do
@@ -41,7 +34,7 @@ post '/login' do
  else
    flash[:notice] = "YOU ARE AN IMPOSTER"
  end
- redirect '/profile'
+ redirect '/'
 end
 
 get '/signup' do
@@ -58,3 +51,35 @@ post '/signup' do
 		)
 	redirect '/'
 end
+
+get '/profile' do
+	@login = User.all
+    @current_login = session[:user_id] && User.find(session[:user_id])
+    p @current_login
+erb :profile
+end
+
+
+###################################################
+#User Infor Storage
+##################################################
+
+get '/database' do 
+
+	@users = User.all
+	erb :database
+end 
+
+
+post '/database' do 
+
+User.create(
+	fname: params[:fname],
+	lname: params[:lname],
+	username: params[:username],
+	password: params[:password]
+)
+redirect '/login'
+end
+
+
