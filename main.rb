@@ -34,7 +34,7 @@ post '/login' do
  else
    flash[:notice] = "YOU ARE AN IMPOSTER"
  end
- redirect '/'
+ redirect '/profile'
 end
 
 get '/signup' do
