@@ -5,6 +5,11 @@ class CreateUsersTable < ActiveRecord::Migration[5.0]
   		t.string :lname
   		t.string :username
   		t.string :password
+  		t.string :email
+  		t.string :address
+  		t.string :phone
+  		t.binary :picture
+  		t.boolean :admin, default: false
   	end
   end
 end
