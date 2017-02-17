@@ -35,13 +35,14 @@ post '/login' do
    @login = nil
  end
  	if @login && @login.admin
- 		redirect '/database'
+ 		redirect '/adminhome'
  	elsif @login == nil
  		redirect '/'
  	else
  		redirect '/profile'
 end
 end
+
 
 get '/signup' do
 	@user = User.all
@@ -76,6 +77,50 @@ post '/profile' do
 		# picture: params[:picture]
 		)
 	redirect '/profile'
+end
+
+##############################################
+#feed
+##############################################
+
+get '/feed' do 
+	@post = Post.last
+	
+	erb :feed
+end
+
+post '/feed' do 
+	Post.create(
+	topic: params[:topic],
+	rob: params[:rob],
+	james: params[:james]
+	)
+redirect '/feed'
+
+end
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#Admin Only
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+#############################################
+#AdminHomepage
+#############################################
+
+#Need to define a <h1>/2 <textarea>S in the admin homepage
+#for the H1 and author articles in feed that we choose everyday. 
+#Need variables below to be referenced in MAIN.ERB, FEED.ERB, ADMIN.ERB. 
+#Need new table that collects the H1 topic and Atricles and posts them.
+get '/adminhome' do 
+erb :admin_homepage
+
+end
+
+
+post '/adminhome' do 
+erb :admin_homepage
+redirect '/adminhome'
 end
 
 
