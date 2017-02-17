@@ -28,7 +28,6 @@ post '/login' do
  p params, @login
 
   if @login && @login.password == params[:password]
-  # "WELCOME #{@user.fname}!"
    session[:user_id] = @login.id
    flash[:notice] = "You successfully logged in!"
  else
@@ -37,6 +36,8 @@ post '/login' do
  end
  	if @login && @login.admin
  		redirect '/database'
+ 	elsif @login == nil
+ 		redirect '/'
  	else
  		redirect '/profile'
 end
@@ -59,9 +60,22 @@ end
 
 get '/profile' do
 	@login = User.all
-    @current_login = session[:user_id] && User.find(session[:user_id])
+    @current_login = User.find(session[:user_id])
     p @current_login
 erb :profile
+end
+
+post '/profile' do
+	User.find(session[:user_id]).update(
+		fname: params[:fname],
+		lname: params[:lname],
+		username: params[:username],
+		password: params[:password],
+		email: params[:email],
+		phone: params[:phone]
+		# picture: params[:picture]
+		)
+	redirect '/profile'
 end
 
 
@@ -86,5 +100,3 @@ User.create(
 )
 redirect '/login'
 end
-
-
