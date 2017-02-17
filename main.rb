@@ -35,12 +35,13 @@ post '/login' do
    flash[:notice] = "YOU ARE AN IMPOSTER"
    @login = nil
  end
- 	if @login && @login.admin
- 		redirect '/database'
- 	else
- 		redirect '/profile'
+ 	# if @login && @login.admin
+ 	# 	redirect '/database'
+ 	# else
+ 	# 	redirect '/profile'
+# end
 end
-end
+
 
 get '/signup' do
 	@user = User.all
@@ -63,6 +64,55 @@ get '/profile' do
     p @current_login
 erb :profile
 end
+
+##############################################
+#feed
+##############################################
+
+get '/feed' do 
+	@daily_topic = Topic.all
+	# @rob_post = Author.authorR
+	# @james_post = Author.authorJ
+	
+	erb :feed
+end
+
+post '/feed' do 
+	Topic.create(
+	topic: params[:topic]
+	)
+
+	Authors.create(
+	authorR: params[:authorR],
+	authorJ: params[:authorJ]
+	)
+
+end
+
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+#Admin Only
+#@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+
+#############################################
+#AdminHomepage
+#############################################
+
+#Need to define a <h1>/2 <textarea>S in the admin homepage
+#for the H1 and author articles in feed that we choose everyday. 
+#Need variables below to be referenced in MAIN.ERB, FEED.ERB, ADMIN.ERB. 
+#Need new table that collects the H1 topic and Atricles and posts them.
+get '/adminhome' do 
+
+
+
+redirect '/adminhome'
+end
+
+
+post '/adminhome' do 
+end
+
 
 
 ###################################################

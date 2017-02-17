@@ -13,3 +13,22 @@ class CreateUsersTable < ActiveRecord::Migration[5.0]
   	end
   end
 end
+
+
+class CreateTopicTable < ActiveRecord::Migration[5.0]
+  def change
+    create_table :topic do |t|
+      t.string :topic
+    end
+  end
+end
+
+class CreateAuthorsTable < ActiveRecord::Migration[5.0]
+  def change 
+    create_table :authors do |t| 
+      t.string :authorR
+      t.string :authorJ
+    end
+  end
+end
+
