@@ -1,23 +1,21 @@
 <div id="Daily_Topic">
-	<% @daily_topic.each do |post| %>
-		<h1><%= post.topic %></h1>
-			<% end %>
+	<h1><%= @post.topic %></h1>
 </div>
 
 <div id="Author_Articles">
 	<legend>
 		<div id="robert_article">
-			<% @rob_post.each do |post|	%>
-				<p><%= post.authorR %></p>
-			<% end %>
+			<p><%= @post.rob %></p>
 		</div>
-			<div id="james_article">
-				<% @james_post.each do |post|	%>
-					<p><%= post.authorJ %></p>
-				<% end %>
-			</div>
+		<div id="james_article">
+			<p><%= @post.james %></p>
+		</div>
 	</legend>
 </div>
+
+
+
+
 
 
 

@@ -28,18 +28,20 @@ post '/login' do
  p params, @login
 
   if @login && @login.password == params[:password]
-  # "WELCOME #{@user.fname}!"
+
    session[:user_id] = @login.id
    flash[:notice] = "You successfully logged in!"
  else
    flash[:notice] = "YOU ARE AN IMPOSTER"
    @login = nil
  end
- 	# if @login && @login.admin
- 	# 	redirect '/database'
- 	# else
- 	# 	redirect '/profile'
-# end
+ 	if @login && @login.admin
+ 		redirect '/adminhome'
+ 	elsif @login == nil
+ 		redirect '/'
+ 	else
+ 		redirect '/profile'
+end
 end
 
 
@@ -70,22 +72,18 @@ end
 ##############################################
 
 get '/feed' do 
-	@daily_topic = Topic.all
-	# @rob_post = Author.authorR
-	# @james_post = Author.authorJ
+	@post = Post.last
 	
 	erb :feed
 end
 
 post '/feed' do 
-	Topic.create(
-	topic: params[:topic]
+	Post.create(
+	topic: params[:topic],
+	rob: params[:rob],
+	james: params[:james]
 	)
-
-	Authors.create(
-	authorR: params[:authorR],
-	authorJ: params[:authorJ]
-	)
+redirect '/feed'
 
 end
 
@@ -103,14 +101,14 @@ end
 #Need variables below to be referenced in MAIN.ERB, FEED.ERB, ADMIN.ERB. 
 #Need new table that collects the H1 topic and Atricles and posts them.
 get '/adminhome' do 
+erb :admin_homepage
 
-
-
-redirect '/adminhome'
 end
 
 
 post '/adminhome' do 
+erb :admin_homepage
+redirect '/adminhome'
 end
 
 
