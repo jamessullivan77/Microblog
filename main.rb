@@ -37,6 +37,8 @@ post '/login' do
  end
  	if @login && @login.admin
  		redirect '/database'
+ 	elsif @login == nil
+ 		redirect '/'
  	else
  		redirect '/profile'
 end
@@ -64,6 +66,18 @@ get '/profile' do
 erb :profile
 end
 
+post '/profile' do
+	@current_login.update(
+		fname: params[:fname],
+		lname: params[:lname],
+		username: params[:username],
+		password: params[:password],
+		email: params[:email],
+		phone: params[:phone],
+		picture: params[:picture]
+		)
+end
+
 
 ###################################################
 #User Infor Storage
@@ -86,5 +100,3 @@ User.create(
 )
 redirect '/login'
 end
-
-
