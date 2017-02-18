@@ -79,6 +79,13 @@ post '/profile' do
 	redirect '/profile'
 end
 
+delete '/profile' do
+	User.find(session[:user_id]).delete
+ 	session.destroy
+ 	flash[:notice] = "You have deleted your account"
+	redirect '/'
+end
+
 ##############################################
 #feed
 ##############################################
