@@ -126,8 +126,9 @@ end
 
 
 post '/adminhome' do 
+
 erb :admin_homepage
-redirect '/adminhome'
+redirect '/feed'
 end
 
 

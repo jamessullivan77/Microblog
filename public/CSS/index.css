@@ -1,3 +1,22 @@
+#Daily_Topic h1{
+	height: 50px;
+	width: 100px;
+	border: solid black 3px;
+}
+#rob p{
+	height: 100px;
+	width: 200px;
+	border: solid black 3px;
+}
+#james p{
+	height: 100px;
+	width: 200px;
+	border: solid black 3px;
+}
+/*value="<%= Post.topic %>"
+value="<%= Post.james %>"
+value="<%= Post.rob %>">*/
+
 #fieldsetProfile {
 	display:none;
 }
