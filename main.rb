@@ -85,6 +85,10 @@ end
 
 get '/feed' do 
 	@post = Post.last
+	@comment_post = Comments.last
+	# + User.find(params[:username])
+	 # .find(session[:user_id])
+	# p @comment_post
 	
 	erb :feed
 end
@@ -94,6 +98,10 @@ post '/feed' do
 	topic: params[:topic],
 	rob: params[:rob],
 	james: params[:james]
+	)
+
+	Comments.create(
+	usr_comment: params[:usr_comment]
 	)
 redirect '/feed'
 

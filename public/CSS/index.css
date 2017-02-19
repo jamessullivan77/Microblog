@@ -13,6 +13,13 @@
 	width: 200px;
 	border: solid black 3px;
 }
-/*value="<%= Post.topic %>"
-value="<%= Post.james %>"
-value="<%= Post.rob %>">*/
+
+#comment_space {
+	height: 100px;
+	width: 200px;
+	border: solid black 3px;
+ }
+ .comment{
+ 	text-align: right;
+ 	background-color: magenta;
+ }
