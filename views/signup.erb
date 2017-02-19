@@ -1,6 +1,6 @@
-<form method="POST" action="/signup">
-	<fieldset>
-		<legend>Sign-Up</legend>
+<fieldset>
+	<legend>Sign-Up</legend>
+	<form method="POST" action="/signup">
 		<label for="fname">First Name</label>
 		<input type="text" name="fname" /><br />
 		<label for="lname">Last Name</label>
@@ -10,5 +10,8 @@
 		<label for="pass">Password</label>
 		<input type="password" name="password" /><br />
 		<input type="submit" value="Create Account" />
-	</fieldset>
-</form>
+	</form>
+	<form method="POST" action="/cancelsignup" />
+		<input type="submit" value="Cancel" />
+	</form>
+</fieldset>

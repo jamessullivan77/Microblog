@@ -29,4 +29,7 @@ value="<%= Post.rob %>">*/
 #fieldsetProfile {
 	display:none;
 }
+#signup{
+	float:right;
+}
 

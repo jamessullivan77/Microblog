@@ -1,10 +1,13 @@
-<form method="POST" action="/login">
-	<fieldset>
-		<legend>login</legend>
+<fieldset>
+	<legend>login</legend>
+	<form method="POST" action="/login">
         	<label for="username">User Name</label>
         	<input name="username" /><br />
         	<label for="pass">Password</label>
         	<input type="password" name="password" /><br />
         	<input type="submit" value="Login" />
-	</fieldset>
-</form>
+	</form>
+	<form method="POST" action="/signupform">
+		<input id="signup" type="submit" value="Sign-Up" />
+	</form>
+</fieldset>

@@ -59,6 +59,18 @@ post '/signup' do
 	redirect '/'
 end
 
+post '/signupform' do
+	redirect '/signup'
+end
+
+post '/cancelsignup' do
+	redirect '/'
+end
+
+post '/canceledit' do
+	redirect '/profile'
+end
+
 get '/profile' do
 	@login = User.all
     @current_login = User.find(session[:user_id])
