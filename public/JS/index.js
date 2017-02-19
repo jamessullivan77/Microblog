@@ -1,20 +1,28 @@
-// document.addEventListener("DOMContentLoaded",function(){
+document.addEventListener("DOMContentLoaded",function(){
 
 
-// document.getElementById("topic" && "r1" && "a1").addEventListener("submit_0" || "submit_1" || "submit_2")
-// 	function(event){
+var space = document.getElementById("comment_space");
+var submit = document.getElementById("usrSub");
 
-// var newTopic = document.getElementById("daily_top").value;
-// var newRob_post = document.getElementById("a1").value;
-// var newJames_post = document.getElementById("a2").value
+document.getElementById("comments").addEventListener("submit",
+	function(event){
+		event.preventDefault();
+		console.log("submit");
+		var newComment = document.getElementById("users_textbox").value;
 
-// document.getElementById("daily_top").value = "";
-// document.getElementById("a1").value = "";
-// document.getElementById("a2").value = "";
+	 	document.getElementById("users_textbox").value = "";
 
+	 	var elNewComment = document.createElement("div");
 
-// }
-// });
+	 	elNewComment.className = "comment";
+	 	elNewComment.id = "msg_" + (space.querySelectorAll(".comment").length+1)
+
+	 	elNewComment.innerText = newComment;
+
+	 	space.appendChild(elNewComment);
+});
+
+});
 
 document.addEventListener("DOMContentLoaded",function(){
 	up.onclick=function(){
@@ -26,4 +34,3 @@ document.addEventListener("DOMContentLoaded",function(){
 		document.getElementById('up').style.display="block"
 	}
 });
-

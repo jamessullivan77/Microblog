@@ -13,6 +13,15 @@
 	width: 200px;
 	border: solid black 3px;
 }
+#comment_space {
+	height: 100px;
+	width: 200px;
+	border: solid black 3px;
+ }
+ .comment{
+ 	text-align: right;
+ 	background-color: magenta;
+ }
 /*value="<%= Post.topic %>"
 value="<%= Post.james %>"
 value="<%= Post.rob %>">*/
@@ -20,3 +29,4 @@ value="<%= Post.rob %>">*/
 #fieldsetProfile {
 	display:none;
 }
+

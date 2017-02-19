@@ -11,13 +11,14 @@
 	</div>
 </legend>
 
+	<br>
 
+	<div id="comment_space"><%= @comment_post.usr_comment %></div>
 
-
-
-
-
-
+<form id=comments method="POST" action="/feed">
+	<textarea type="textarea" rows="4" cols="95" id="users_textbox" name="usr_comment"></textarea>
+		<input id="usrSub" type="submit"  value="Submit">
+</form>
 
 
 
