@@ -18,9 +18,13 @@
 
 	<br>
 
-	<div id="comment_space"><%= @comment_post.usr_comment %> </div>
+	<div id="comment_space"><% @post.comments.each_with_index do |comment,index| %> 
+			<div class="comment" id="msg_<%= index+1 %>"> <%= comment.usr_comment %><span class="right"><%= comment.created_at.localtime.strftime("%l:%M %p") %></span> </div>
+		<% end %>
 
-<form id=comments method="POST" action="/feed">
+	</div>
+
+<form id=comments method="POST" action="/post/<%= @post.id %>/comment">
 	<textarea type="textarea" rows="4" cols="95" id="users_textbox" name="usr_comment"></textarea>
 		<input id="usrSub" type="submit"  value="Submit">
 </form>
@@ -33,7 +37,7 @@ save everything to database
 
 organize databse
  -->
-
+<!-- <span class="username"><%= user.username %></span> -->
 
 
 
