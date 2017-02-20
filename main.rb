@@ -104,17 +104,12 @@ end
 
 get '/feed' do 
 	@post = Post.last
-	@comment_post = Comments.last 
-	
-	erb :feed
-	# && User.find(params[:username])
+	@comment_post = Comments.last
+	# + User.find(params[:username])
 	 # .find(session[:user_id])
 	# p @comment_post
-
-	# @date = Time.new(1487523394 * 1000)
-# <%= Time.now %>
- # @H - Hour of the day, 24-hour clock, zero-padded (00..23)
-
+	
+	erb :feed
 end
 
 post '/feed' do 
@@ -125,8 +120,7 @@ post '/feed' do
 	)
 
 	Comments.create(
-	usr_comment: params[:usr_comment],
-	user_id: params[:user_id]
+	usr_comment: params[:usr_comment]
 	)
 redirect '/feed'
 
