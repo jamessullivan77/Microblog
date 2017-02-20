@@ -32,8 +32,12 @@
         <input type="string" name="phone" value="<%= @current_login.phone %>" /><br />
         <input id="editSubmit" type="submit" value="Submit Edits" />
     </form><br>
+    <form method="POST" action="/canceledit">
+        <input type="submit" value="Cancel" />
+    </form>
     <form method="POST" action="/profile">
       <input type='hidden' name='_method' value='delete' />
       <input type="submit" value="Delete Profile" />
     </form>
   </fieldset>
+  <h5><a href="/feed">View Feed</a></h5>
