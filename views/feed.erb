@@ -1,4 +1,10 @@
-
+<h5><a href="/profile">Back to Profile</a></h5>
+	
+<!-- <div id="topic comments"> </div>
+		<form id="sug_topics" method="POST" action="/feed"> 
+			<input type="text" name="sug_top">
+			<input type="submit" name="Submit">
+		</form> -->
 
 	<div id="Daily_Topic">
 		<h1><%= @post.topic %></h1>
@@ -10,17 +16,23 @@
 		<p><%= @post.james %></p>
 	</div>
 
-
 	<br>
 
-	<div id="comment_space"> <span id="span"> </span>  <%= @comment_post.usr_comment %> </div>
+	<div id="comment_space"><%= @comment_post.usr_comment %> </div>
 
 <form id=comments method="POST" action="/feed">
 	<textarea type="textarea" rows="4" cols="95" id="users_textbox" name="usr_comment"></textarea>
 		<input id="usrSub" type="submit"  value="Submit">
 </form>
-<h5><a href="/profile">Back to Profile</a></h5>
+<!-- 
+######add box, top right corner for suggested topics, up and down values connected to see which is most liked. 
 
+display username on bottom comments. set a date for posts in that day in its own div. 
+
+save everything to database
+
+organize databse
+ -->
 
 
 
