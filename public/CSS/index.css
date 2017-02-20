@@ -1,27 +1,43 @@
+
+
+
+
+
+
+
+
 #Daily_Topic h1{
-	height: 50px;
+	height: 60px;
 	width: 100px;
 	border: solid black 3px;
+	display: inline-block;
 }
 #rob p{
 	height: 100px;
 	width: 200px;
 	border: solid black 3px;
+	display: inline-block;
 }
 #james p{
 	height: 100px;
 	width: 200px;
 	border: solid black 3px;
+	display: inline-block;
 }
+
 #comment_space {
-	height: 100px;
+	max-height: 100%;
+	min-height: 100px;
 	width: 200px;
 	border: solid black 3px;
+	display: inline-block;
  }
  .comment{
- 	text-align: right;
- 	background-color: magenta;
+ 	text-align: left;
+ 	border: solid blue 2px;
  }
+
+
 /*value="<%= Post.topic %>"
 value="<%= Post.james %>"
 value="<%= Post.rob %>">*/
