@@ -2,12 +2,36 @@
 <html>
 <head>
 	<title>Micro blog</title>
-	<link rel="stylesheet" type="text/css" href="CSS/index.css">
-
+		<link rel="stylesheet" type="text/css" href="CSS/index.css">
+		<link href="https://fonts.googleapis.com/css?family=EB+Garamond" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=EB+Garamond|Marck+Script" rel="stylesheet">
+		<link href="https://fonts.googleapis.com/css?family=Cinzel+Decorative|EB+Garamond|Marck+Script|Patrick+Hand+SC" rel="stylesheet">
 </head>
+
 <body>
+	<header id="header">
+		<h1>TopPick</h1>
+			<img id="glasses" src="images/glasses.png">
+				<h3>The People's Choice</h3>
+	</header>
+
 
 <%= yield %>
+
+
+
+
+<!--  sticky footer -->
+<div class="wrapper">
+  
+<div class="push"></div>
+</div>
+
+<footer class="footer" id="footer">  
+<h4>By:</h4>
+	<h3>The bloggers of Top-Pick</h3>
+</footer>
+<!--  sticky footer -->
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <script src="JS/index.js"></script>

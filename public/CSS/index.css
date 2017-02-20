@@ -1,47 +1,152 @@
+html, body {
+  height: 100%;
+  margin: 0;
+}
+header {
+	background-color: lightskyblue;
+	position: static;
+	border: solid gold 3px;
+	right: 0;
+  	bottom: 0;
+  	left: 0;
+  	height: 100px;
+	width: 100%;
+}
+header h1 {
+	text-align: center;
+	font-family: 'EB Garamond', serif;
+	font-size: 40px;
+	margin-top: 7px;
+	margin-bottom: 3px;
+}
+header h3 {
+	text-align: center;
+	font-family: 'Marck Script', cursive;
+	margin-top: 1px;
+}
+#glasses {
+	height: 60px;
+	width: 120px;
+	float: left;
+	z-index: 1;
+	margin-top: -40px;
+  	bottom: 0;
+  	margin-left: 20px;
+  	top: 0;
+}
+/*header^^^^^^^^*/
+
+#Daily_Topic h1 {
+	display: inline-block;
+	text-align: center;
+
 #iframe {
 	width:750px;
 	height:400px;
 }
 #Daily_Topic h1{
+
 	height: 60px;
-	width: 100px;
+	width: 300px;
 	border: solid black 3px;
 	display: inline-block;
+	margin-left: 40%;
+	margin-bottom: 1px;
+
+}
+#rob {
+	height: 350px;
+	width: 600px;
+	display: inline-block;
+	position: relative;
+	margin-right: 0px;
+	padding right: 2px;
 }
 #rob p{
-	height: 100px;
-	width: 200px;
+	height: 350px;
+	width: 600px;
 	border: solid black 3px;
+	font-family: 'EB Garamond', bold serif;
+	font-size: 18px;
 	display: inline-block;
+	position: relative;
+	padding right: 2px;
+}
+#james {
+	height: 350px;
+	width: 600px;
+	display: block;
+	float: right;
+	position: relative;
+	margin-left: 0px;
+	padding left: 2px;
+	margin-bottom: 1px;
 }
 #james p{
-	height: 100px;
-	width: 200px;
+	height: 350px;
+	width: 600px;
 	border: solid black 3px;
-	display: inline-block;
+	font-family: 'EB Garamond', bold serif;
+	font-size: 18px;
+	display: block;
+	float: right;
+	position: relative;
+	margin-left: 0px;
+	padding left: 2px;
+	margin-bottom: 1px;
 }
-
 #comment_space {
-	max-height: 100%;
-	min-height: 100px;
-	width: 200px;
+	height: 300px;
+	width: 800px;
 	border: solid black 3px;
-	display: inline-block;
- }
- .comment{
+	display: block;
+	margin-top: 50px;
+	font-size: 30px;
+	margin-right: 0px;
+	margin-left: 250px;
+	overflow-y:scroll
+}
+#users_textbox{
+	margin-left: 360px;
+}
+.comment{
  	text-align: left;
  	border: solid blue 2px;
- }
-
-
-/*value="<%= Post.topic %>"
-value="<%= Post.james %>"
-value="<%= Post.rob %>">*/
-
+}
 #fieldsetProfile {
 	display:none;
 }
 #signup{
 	float:right;
+}
+
+/*sticky footer */
+.wrapper {
+  min-height: 130px;
+  margin-bottom: -50px;
+  overflow-y:scroll
+}
+.push {
+  height: 100px;
+}
+footer {
+	background-color: lightskyblue;
+	border: solid gold 3px;
+	right: 0;
+  	bottom: 0;
+  	left: 0;
+	width: 100%; 
+	height: 100px;
+  
+}
+footer h4{
+	font-family: 'Marck Script', cursive;
+	margin-left: 50%;
+	margin-bottom: 1px;
+}
+footer h3{
+	font-family: 'EB Garamond', serif;
+	text-align: center;
+	margin-top: 1px;
 }
 
