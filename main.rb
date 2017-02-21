@@ -131,10 +131,12 @@ end
 post '/post/:id/comment' do
 	@current_login = session[:user_id] && User.find(session[:user_id]) 
 	p params 
+	# DateTime.strptime("%m/%d/%Y")
 	Comment.create(
 		usr_comment: params[:usr_comment],
 		post_id: params[:id],
 		user_id: @current_login.id
+
 	)
 	# User.find(
 	# 	username: params[:username]

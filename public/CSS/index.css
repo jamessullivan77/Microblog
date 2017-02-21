@@ -39,16 +39,16 @@ header h3 {
 #Daily_Topic h1 {
 	display: inline-block;
 	text-align: center;
+	font-family: 'Patua One', cursive;
 }
 
 .right {
 	float: right;
 }
 #Daily_Topic h1{
-
 	height: 60px;
 	width: 300px;
-	border: solid black 3px;
+	/*border: solid black 3px;*/
 	display: inline-block;
 	margin-left: 40%;
 	margin-bottom: 1px;
@@ -59,18 +59,36 @@ header h3 {
 	width: 600px;
 	display: inline-block;
 	position: relative;
-	margin-right: 0px;
-	padding right: 2px;
+	margin-right: 5px;
+	padding: 2px;
+	float: left;
+	margin-bottom: 5px;
 }
 #rob p{
 	height: 350px;
 	width: 600px;
-	border: solid black 3px;
+	border-width: 7px;  
+	border-style: inset;
+    border-color: gold;
+    border-top-color: lightskyblue;
+  	border-left-color: lightskyblue;
 	font-family: 'EB Garamond', bold serif;
 	font-size: 18px;
 	display: inline-block;
 	position: relative;
-	padding right: 2px;
+	padding: 5px;
+	float: left;
+	margin-bottom: 5px;
+	margin-left: 10px;
+}
+#fill{
+	height: 350px;
+	width: 350px;
+/*	border: solid black 3px;*/
+	display: inline-block;
+	position: relative;
+	margin-left: 3px;
+	margin-top: 18px;
 }
 #james {
 	height: 350px;
@@ -78,36 +96,65 @@ header h3 {
 	display: block;
 	float: right;
 	position: relative;
-	margin-left: 0px;
+	margin-left: 5px;
 	padding left: 2px;
-	margin-bottom: 1px;
+	margin-bottom: 5px;
 }
 #james {
 	height: 350px;
 	width: 600px;
-	border: solid black 3px;
+	border-width: 7px;  
+    border-style: inset;
+    border-color: gold;
+    border-top-color: lightskyblue;
+  	border-left-color: lightskyblue;
 	font-family: 'EB Garamond', bold serif;
 	font-size: 18px;
 	display: block;
 	float: right;
 	position: relative;
-	margin-left: 0px;
-	padding left: 2px;
-	margin-bottom: 1px;
+	margin-left: 10px;
+	margin-right: 10px;
+	padding: 5px;
+	margin-bottom: 5px;
 }
+#fill_2 {
+	height: 350px;
+	width: 390px;
+	/*border: solid black 3px;*/
+	display: inline-block;
+	position: relative;
+	margin-left: 0px;
+	margin-top: 18px;
+}
+
 #comment_space {
-	height: 300px;
+	height: 350px;
 	width: 800px;
-	border: solid black 3px;
-	display: block;
+	border-width: 7px;  
+    border-style: inset;
+    border-color: gold;
+    border-top-color: lightskyblue;
+  	border-left-color: lightskyblue;
+	display: inline-block;
+	position: relative;
 	margin-top: 50px;
-	font-size: 30px;
-	margin-right: 0px;
-	margin-left: 250px;
+	font-size: 25px;
+	margin-left: -2px;
 	overflow-y:scroll
 }
 #users_textbox{
-	margin-left: 360px;
+	margin-left: 500px;
+}
+#fill_3 {
+	height: 350px;
+	width: 390px;
+	/*border: solid black 3px;*/
+	display: inline-block;
+	position: relative;
+	float: right;
+	margin-left: 3px;
+	margin-top: 18px;
 }
 .comment{
  	text-align: left;
