@@ -40,9 +40,11 @@ header h3 {
 	display: inline-block;
 	text-align: center;
 }
+
 .right {
 	float: right;
 }
+
 #iframe {
 	width:750px;
 	height:400px;

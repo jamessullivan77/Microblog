@@ -119,6 +119,7 @@ post '/feed' do
 	post = Post.create(
 	topic: params[:topic],
 	rob: params[:rob],
+
 	james: params[:james],
 	user_id: @current_login.id
 	)
