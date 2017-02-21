@@ -119,18 +119,11 @@ post '/feed' do
 	post = Post.create(
 	topic: params[:topic],
 	rob: params[:rob],
-<<<<<<< HEAD
-	james: params[:james]
-	)
-	
-	Comments.create(
-	usr_comment: params[:usr_comment]
-=======
+
 	james: params[:james],
 	user_id: @current_login.id
->>>>>>> befb25e5ace790a1819908af4cf14ecc52d04d4b
 	)
-	
+
 redirect '/feed'
 
 end
