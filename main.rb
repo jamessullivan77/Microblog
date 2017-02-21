@@ -4,6 +4,7 @@ require 'sinatra/activerecord'
 require 'sinatra/flash'
 require 'sqlite3'
 require './model'
+require 'json'
 
 set :database, "sqlite3:whatever.db"
 enable :sessions 
@@ -79,6 +80,7 @@ erb :profile
 end
 
 post '/profile' do
+	@current_login = session[:user_id] && User.find(session[:user_id])
 	User.find(session[:user_id]).update(
 		fname: params[:fname],
 		lname: params[:lname],
@@ -104,7 +106,7 @@ end
 
 get '/feed' do 
 	@post = Post.last
-	@comment_post = Comments.last
+	# @comment_post = Comments.last
 	# + User.find(params[:username])
 	 # .find(session[:user_id])
 	# p @comment_post
@@ -113,17 +115,31 @@ get '/feed' do
 end
 
 post '/feed' do 
-	Post.create(
+	@current_login = session[:user_id] && User.find(session[:user_id])
+	post = Post.create(
 	topic: params[:topic],
 	rob: params[:rob],
-	james: params[:james]
+	james: params[:james],
+	user_id: @current_login.id
 	)
-
-	Comments.create(
-	usr_comment: params[:usr_comment]
-	)
+	
 redirect '/feed'
 
+end
+
+post '/post/:id/comment' do
+	@current_login = session[:user_id] && User.find(session[:user_id]) 
+	p params 
+	Comment.create(
+		usr_comment: params[:usr_comment],
+		post_id: params[:id],
+		user_id: @current_login.id
+	)
+	# User.find(
+	# 	username: params[:username]
+	# 	)
+	content_type :json
+	{status: "ok"}.to_json
 end
 
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
