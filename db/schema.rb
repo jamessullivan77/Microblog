@@ -13,16 +13,13 @@
 ActiveRecord::Schema.define(version: 20170219053204) do
 
   create_table "comments", force: :cascade do |t|
-<<<<<<< HEAD
     t.string  "usr_comment"
     t.integer "user_id"
     t.integer "post_id"
-=======
     t.string   "usr_comment"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
     t.integer  "user_id"
->>>>>>> d4330cef005751890cab3fe0a5da5c2c2281bb14
   end
 
   create_table "posts", force: :cascade do |t|
