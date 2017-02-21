@@ -46,13 +46,11 @@
 </div>
 <div id="robdivtwo">
   <h1>My blog history</h1>
-  <form method="GET" action="/profilegets">
     <ul>
       <% @current_login.comments.each do |comment| %>
-      <li><%= comment.usr_comment %></li>
+      <li><strong><%= comment.post.topic %></strong>: <%= comment.usr_comment %></li>
       <% end %>
     </ul>
-  </form>
 </div><br>
 <iframe id="iframe" src="http://localhost:4567/feed"></iframe>
 </form>

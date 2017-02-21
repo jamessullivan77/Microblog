@@ -144,9 +144,7 @@ post '/post/:id/comment' do
 	content_type :json
 	{status: "ok"}.to_json
 end
-post '/profilegets' do
 
-end
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
 #Admin Only
