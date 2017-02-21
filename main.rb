@@ -123,7 +123,7 @@ post '/feed' do
 	james: params[:james],
 	user_id: @current_login.id
 	)
-	
+
 redirect '/feed'
 
 end
