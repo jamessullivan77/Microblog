@@ -40,7 +40,13 @@ header h3 {
 	display: inline-block;
 	text-align: center;
 }
+<<<<<<< HEAD
 
+=======
+.right {
+	float: right;
+}
+>>>>>>> befb25e5ace790a1819908af4cf14ecc52d04d4b
 #iframe {
 	width:750px;
 	height:400px;
