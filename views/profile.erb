@@ -1,46 +1,59 @@
-<% if flash[:notice] %>
-<div id="notice">
- <%= flash[:notice] %>
-</div>
-<% end %>
-<%= "Session:" + session[:user_id].to_s %>
-<h1>Welcome <%= @current_login.fname %> <%= @current_login.lname %></h1>
-<% if @current_login %>
-<h3>Personal Information</h3>
-<p><strong>User Name:</strong> <%= @current_login.username %></p>
-<p><strong>Email:</strong> <%= @current_login.email %></p>
-<p><strong>Phone:</strong> <%= @current_login.phone %></p>
-<a href="/logout">Log Out</a>
-<% end %>
-<%= erb :login unless @current_login %>
-<h5><a id="up" href=#fieldsetProfile><strong>Edit Profile</strong></a></h5>
+<div id="profile">
+  <% if flash[:notice] %>
+  <div id="notice">
+   <%= flash[:notice] %>
+ </div>
+ <% end %>
+ <div id="robdivone">
+  <%= "Session:" + session[:user_id].to_s %>
+  <h1>Welcome <%= @current_login.fname %> <%= @current_login.lname %></h1>
+  <% if @current_login %>
+  <h3>Personal Information</h3>
+  <p><strong>User Name:</strong> <%= @current_login.username %></p>
+  <p><strong>Email:</strong> <%= @current_login.email %></p>
+  <p><strong>Phone:</strong> <%= @current_login.phone %></p>
+  <a href="/logout">Log Out</a>
+  <% end %>
+  <%= erb :login unless @current_login %>
+  <h5><a id="up" href=#fieldsetProfile><strong>Edit Profile</strong></a></h5>
 
-<fieldset id="fieldsetProfile">
-  <legend>Edit Profile</legend>
-  <form method="POST" action="/profile">
-    <label for="fname">First Name</label>
-    <input type="text" name="fname" value="<%= @current_login.fname %>" /><br />
-    <label for="lname">Last Name</label>
-    <input type="text" name="lname" value="<%= @current_login.lname %>" /><br />
-    <label for="username">User Name</label>
-    <input type="text" name="username" value="<%= @current_login.username %>" /><br />
-    <label for="pass">Password</label>
-    <input type="password" name="password" value="<%= @current_login.password %>" /><br />
-    <label for="email">Email</label>
-    <input type="string" name="email" value="<%= @current_login.email %>" /><br />
-    <label for="phone">Phone</label>
-    <input type="string" name="phone" value="<%= @current_login.phone %>" /><br />
-    <input id="editSubmit" type="submit" value="Submit Edits" />
-  </form><br>
-  <form method="POST" action="/canceledit">
-    <input type="submit" value="Cancel" />
-  </form>
-  <form method="POST" action="/profile">
-    <input type='hidden' name='_method' value='delete' />
-    <input type="submit" value="Delete Profile" />
-  </form>
-</fieldset>
-<iframe id="iframe" src="http://localhost:4567/feed"></iframe>
-<form method="GET" actions="/feeds">
+  <fieldset id="fieldsetProfile">
+    <legend>Edit Profile</legend>
+    <form method="POST" action="/profile">
+      <label for="fname">First Name</label>
+      <input type="text" name="fname" value="<%= @current_login.fname %>" /><br />
+      <label for="lname">Last Name</label>
+      <input type="text" name="lname" value="<%= @current_login.lname %>" /><br />
+      <label for="username">User Name</label>
+      <input type="text" name="username" value="<%= @current_login.username %>" /><br />
+      <label for="pass">Password</label>
+      <input type="password" name="password" value="<%= @current_login.password %>" /><br />
+      <label for="email">Email</label>
+      <input type="string" name="email" value="<%= @current_login.email %>" /><br />
+      <label for="phone">Phone</label>
+      <input type="string" name="phone" value="<%= @current_login.phone %>" /><br />
+      <input id="editSubmit" type="submit" value="Submit Edits" />
+    </form><br>
+    <form method="POST" action="/canceledit">
+      <input type="submit" value="Cancel" />
+    </form>
+    <form method="POST" action="/profile">
+      <input type='hidden' name='_method' value='delete' />
+      <input type="submit" value="Delete Profile" />
+    </form>
+  </fieldset>
   <h5><a href="/feed">View Feed</a></h5>
+</div>
+<div id="robdivtwo">
+  <h1>My blog history</h1>
+  <form method="GET" action="/profilegets">
+    <ul>
+      <% @current_login.comments.each do |comment| %>
+      <li><%= comment.usr_comment %></li>
+      <% end %>
+    </ul>
+  </form>
+</div><br>
+<iframe id="iframe" src="http://localhost:4567/feed"></iframe>
 </form>
+</div>

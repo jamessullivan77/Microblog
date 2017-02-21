@@ -44,11 +44,6 @@ header h3 {
 .right {
 	float: right;
 }
-
-#iframe {
-	width:750px;
-	height:400px;
-}
 #Daily_Topic h1{
 
 	height: 60px;
@@ -87,7 +82,7 @@ header h3 {
 	padding left: 2px;
 	margin-bottom: 1px;
 }
-#james p{
+#james {
 	height: 350px;
 	width: 600px;
 	border: solid black 3px;
@@ -118,9 +113,7 @@ header h3 {
  	text-align: left;
  	border: solid blue 2px;
 }
-#fieldsetProfile {
-	display:none;
-}
+/*signup*/
 #signup{
 	float:right;
 }
@@ -154,4 +147,23 @@ footer h3{
 	text-align: center;
 	margin-top: 1px;
 }
-
+/*profile page*/
+#profile {
+	background-color:lightgray;
+}
+#robdivone {
+	float:left;
+	margin:10px 10px 10px 40px;
+}
+#robdivtwo {
+	float:right;
+	margin:10px 100px 10px 10px;
+}
+#iframe {
+	background-color:white;
+	width:750px;
+	height:400px;
+}
+#fieldsetProfile {
+	display:none;
+}
