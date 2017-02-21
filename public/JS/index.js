@@ -1,10 +1,14 @@
 document.addEventListener("DOMContentLoaded",function(){
 
+window.onload = setInterval(time,1);
 var date = new Date();
 var time = new Date();
 var day = date.getDate();
 var month = date.getMonth()+1;
 var year = date.getFullYear();
+var hours = time.getHours();
+var minutes = time.getMinutes();
+var seconds = time.getSeconds();
 var AM_PM = "";
 
 if (hours < 12) {
@@ -32,9 +36,6 @@ if (minutes < 10){
 if (hours < 10){
 	hours = "0" + hours
 }
-var hours = time.getHours();
-var minutes = time.getMinutes();
-var seconds = time.getSeconds();
 
 
 date = month + "/" + day + "/" + year; 
@@ -81,6 +82,7 @@ document.getElementById("comments").addEventListener("submit",
 	});
 });
 
+
 document.addEventListener("DOMContentLoaded",function(){
 	up.onclick=function(){
 		document.getElementById('up').style.display="none"
@@ -90,6 +92,7 @@ document.addEventListener("DOMContentLoaded",function(){
 		document.getElementById('fieldsetProfile').style.display="none"
 		document.getElementById('up').style.display="block"
 	}
+
+
+
 });
-
-
