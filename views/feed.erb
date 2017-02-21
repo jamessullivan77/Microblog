@@ -9,13 +9,13 @@
 	<div id="Daily_Topic">
 		<h1><%= @post.topic %></h1>
 	</div>
-	<div id="rob">
-		<p><%= @post.rob %></p>
-	</div>
-	<div id="fill"></div>
-	<div id="james">
-		<p><%= @post.james %></p>
-	</div>
+		<div id="rob">
+			<p><%= @post.rob %></p>
+		</div>
+			<div id="fill"></div>
+				<div id="james">
+					<p><%= @post.james %></p>
+				</div>
 
 	<br>
 
@@ -24,14 +24,19 @@
 
 	<div id="comment_space">
 		<span class="above">
-			<%= @post.comments.first.created_at.localtime.strftime("%a  %D %m %y") if (@post.comments.first) %>
+			<%= @post.comments.first.created_at.localtime.strftime("%a - %D") if (@post.comments.first)%>
 		</span>
-		<% @post.comments.each_with_index do |comment,index| %> 
-			<div class="comment" id="msg_<%= index+1 %>">
-				<%= comment.usr_comment %>
-				<span class="right">
-					<%= comment.created_at.localtime.strftime("%l: %M %p") %>
-				</span>
+			<% @post.comments.each_with_index do |comment,index| %> 
+				<div class="comment" id="msg_<%= index+1 %>">
+					<span class="username">
+						<%=	comment.user.username + ":"%>
+					</span>
+						<span class="right">
+							<%= comment.created_at.localtime.strftime("%l: %M %p") %>
+						</span>
+						<p class="com">
+							<%= comment.usr_comment %>
+						</p>
 			</div>
 		<% end %>
 	</div>
@@ -45,7 +50,7 @@
 <!-- 
 ######add box, top right corner for suggested topics, up and down values connected to see which is most liked. 
 
-display username on bottom comments. set a date for posts in that day in its own div. 
+display username on bottom comments.
 
 save everything to database
 

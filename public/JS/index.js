@@ -80,7 +80,7 @@ document.getElementById("comments").addEventListener("submit",
 
 			 	elNewComment.innerText = newComment;
 			 	elNewComment.appendChild(elTime);
-			 	elNewComment.appendChild(elDate);
+			 	// elNewComment.appendChild(elDate);
 			 	space.appendChild(elNewComment);
 	 		}
 	 	});

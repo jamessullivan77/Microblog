@@ -136,7 +136,6 @@ post '/post/:id/comment' do
 		usr_comment: params[:usr_comment],
 		post_id: params[:id],
 		user_id: @current_login.id
-
 	)
 	# User.find(
 	# 	username: params[:username]
