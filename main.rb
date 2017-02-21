@@ -176,6 +176,7 @@ end
 get '/database' do 
 
 	@users = User.all
+
 	erb :database
 end 
 
@@ -186,7 +187,9 @@ User.create(
 	fname: params[:fname],
 	lname: params[:lname],
 	username: params[:username],
-	password: params[:password]
-)
+	password: params[:password],
+	user_id: @current_login.id
+	)
+
 redirect '/login'
 end
