@@ -1,3 +1,4 @@
+if (window.location.pathname == '/feed') {
 document.addEventListener("DOMContentLoaded",function(){
 
 window.onload = setInterval(time,1);
@@ -81,8 +82,9 @@ document.getElementById("comments").addEventListener("submit",
 
 	});
 });
+}
 
-
+if (window.location.pathname == '/profile') {
 document.addEventListener("DOMContentLoaded",function(){
 	up.onclick=function(){
 		document.getElementById('up').style.display="none"
@@ -92,7 +94,5 @@ document.addEventListener("DOMContentLoaded",function(){
 		document.getElementById('fieldsetProfile').style.display="none"
 		document.getElementById('up').style.display="block"
 	}
-
-
-
 });
+}
