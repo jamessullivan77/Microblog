@@ -66,6 +66,10 @@ document.getElementById("comments").addEventListener("submit",
 	 			elTime.innerText = time;
 	 			elTime.className = "right";
 
+	 			var elDate = document.createElement("span");
+	 			elDate.innerText = date;
+	 			elDate.className = "above";
+
 			 	document.getElementById("users_textbox").value =  "";
 
 			 	var elNewComment = document.createElement("div");
@@ -75,6 +79,7 @@ document.getElementById("comments").addEventListener("submit",
 
 			 	elNewComment.innerText = newComment;
 			 	elNewComment.appendChild(elTime);
+			 	elNewComment.appendChild(elDate);
 			 	space.appendChild(elNewComment);
 	 		}
 	 	});
