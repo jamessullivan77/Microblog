@@ -1,35 +1,29 @@
 <h5><a href="/profile">Back to Profile</a></h5>
-	
-<!-- <div id="topic comments"> </div>
-		<form id="sug_topics" method="POST" action="/feed"> 
-			<input type="text" name="sug_top">
-			<input type="submit" name="Submit">
-		</form> -->
 
 	<div id="Daily_Topic">
 		<h1><%= @post.topic %></h1>
 	</div>
+	
+<div id="container">
 		<div id="rob">
 			<p><%= @post.rob %></p>
 		</div>
-			<div id="fill"></div>
-				<div id="james">
-					<p><%= @post.james %></p>
-				</div>
+			<div id="james">
+				<p><%= @post.james %></p>
+			</div>
+</div>
 
 	<br>
-
-<div id="fill_2"></div>
 
 
 	<div id="comment_space">
 		<span class="above">
 			<%= @post.comments.first.created_at.localtime.strftime("%a - %D") if (@post.comments.first)%>
 		</span>
-			<% @post.comments.each_with_index do |comment,index| %> 
+			<% @post.comments.each_with_index do |comment,index| %>
 				<div class="comment" id="msg_<%= index+1 %>">
 					<span class="username">
-						<%=	comment.user.username + ":"%>
+						<%=	comment.user.username + ":" %>
 					</span>
 						<span class="right">
 							<%= comment.created_at.localtime.strftime("%l: %M %p") %>
@@ -41,23 +35,13 @@
 		<% end %>
 	</div>
 
-<div id="fill_3"></div>
-
-<form id=comments method="POST" action="/post/<%= @post.id %>/comment">
+<form id="comments" method="POST" action="/post/<%= @post.id %>/comment">
 	<textarea type="textarea" rows="4" cols="95" id="users_textbox" name="usr_comment"></textarea>
+		<input id="uname" type="hidden" name="uname" value="<%= @current_login.username %>">
 		<input id="usrSub" type="submit"  value="Submit">
 </form>
-<!-- 
-######add box, top right corner for suggested topics, up and down values connected to see which is most liked. 
 
-display username on bottom comments.
 
-save everything to database
-
-organize databse
-<<<<<<< HEAD
-<<<<<<< HEAD
- -->
 
 
 

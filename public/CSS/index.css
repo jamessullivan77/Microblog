@@ -7,9 +7,9 @@ header {
 	position: static;
 	border: solid gold 3px;
 	right: 0;
-  	bottom: 0;
-  	left: 0;
-  	height: 100px;
+  bottom: 0;
+  left: 0;
+  height: 100px;
 	width: 100%;
 }
 header h1 {
@@ -30,158 +30,146 @@ header h3{
 	float: left;
 	z-index: 1;
 	margin-top: -40px;
-  	bottom: 0;
-  	margin-left: 20px;
-  	top: 0;
+  bottom: 0;
+  margin-left: 20px;
+  top: 0;
 }
 /*header^^^^^^^^*/
 
 #Daily_Topic h1{
-	display: inline-block;
+	display: block;
 	text-align: center;
 	font-family: 'Patua One', cursive;
 	height: 60px;
 	width: 300px;
 	/*border: solid black 3px;*/
-	display: inline-block;
-	margin-left: 40%;
+	margin-left: 39%;
 	margin-bottom: 1px;
 	text-decoration: underline;
 }
+#container{
+	height: 350px;
+	width: 100%;
+	position: relative;
+	display: block;
+}
 #rob{
 	height: 350px;
-	width: 600px;
-	display: inline-block;
-	position: relative;
+	width: 50%;
+	display: block;
+	position: absolute;
 	margin-right: 5px;
 	padding: 2px;
 	float: left;
-	margin-bottom: 5px;
+	left: 0px;
+	margin-top: 0px;
+	margin-bottom: 50px;
+	left: 0;
 }
 #rob p{
 	height: 350px;
 	width: 600px;
 	border-width: 7px;  
 	border-style: inset;
-    border-color: gold;
-    border-top-color: lightskyblue;
-  	border-left-color: lightskyblue;
+  border-color: gold;
+  border-top-color: lightskyblue;
+  border-left-color: lightskyblue;
 	font-family: 'EB Garamond', bold serif;
 	font-size: 18px;
-	display: inline-block;
-	position: relative;
+	display: block;
+	position: absolute;
 	padding: 5px;
+	left: 0;
 	float: left;
-	margin-bottom: 5px;
-	margin-left: 10px;
-}
-#fill{
-	height: 370px;
-	width: 320px;
-	/*border: solid black 3px;*/
-	display: inline-block;
-	position: static;
-	margin-left: 30px;
-	margin-top: 18px;
+	margin-top: 0px;
+	margin-bottom: 50px;
 }
 #james{
 	height: 350px;
-	width: 600px;
+	width: 50%;
 	display: block;
 	float: right;
-	position: relative;
-	margin-left: 5px;
+	position: absolute;
 	padding left: 2px;
-	margin-bottom: 5px;
+	margin-top: 0px;
+	margin-bottom: 50px;
+	right: 0px;
 }
 #james p{
 	height: 350px;
 	width: 600px;
 	border-width: 7px;  
-    border-style: inset;
-    border-color: gold;
-    border-top-color: lightskyblue;
-  	border-left-color: lightskyblue;
+  border-style: inset;
+  border-color: gold;
+  border-top-color: lightskyblue;
+ 	border-left-color: lightskyblue;
 	font-family: 'EB Garamond', bold serif;
 	font-size: 18px;
 	display: block;
 	float: right;
-	position: relative;
-	margin-left: 10px;
-	margin-right: 10px;
+	position: absolute;
 	padding: 5px;
-	margin-bottom: 5px;
+	margin-top: 0px;
+	margin-bottom: 50px;
+	right: 0px;
 }
-#fill_2 {
-	height: 350px;
-	width: 380px;
-	/*border: solid black 3px;*/
-	display: inline-block;
-	position: static;
-	margin-left: 0px;
-	margin-top: 18px;
-}
+
+
+/**container postiion relative, display block rob box will be 
+positioned absolute for both. top and bottom will = o
+rob = left 0 , width 50%. james is right 0, right 50 */
+
 #comment_space{
 	height: 600px;
 	width: 800px;
 	border-width: 7px;  
-    border-style: inset;
-    border-color: gold;
-    border-top-color: lightskyblue;
-  	border-left-color: lightskyblue;
+  border-style: inset;
+  border-color: gold;
+  border-top-color: lightskyblue;
+  border-left-color: lightskyblue;
+	margin-top: 40px;
+	margin-left: auto;
+	margin-right: auto;
+	font-size: 20px;
 	display: inline-block;
-	position: relative;
-	margin-top: 25px;
-	font-size: 25px;
-	margin-left: -2px;
-	overflow-y:scroll
+  position: relative;
+	overflow-y: scroll;
+	display: block;
+
 }
 .above{
 	margin-left: 42%;
 	font-family: 'Aldrich', sans-serif;
 	margin-bottom: 10px;
-	margin-top: 10px;
+  margin-top: 10px;
 }
 .comment{
  	text-align: left;
- 	border: solid blue 4px;
- 	line-height: 1.3; 
-  	padding: 2px 0; 
-  	width: 750px;
-  	margin: 20px auto;
+ 	border: solid blue 4px; 
+  line-height: 1.3;
+  padding: 2px 0; 
+  width: 750px;
+  margin: 20px auto;
+  display: block;
 }
 .username{
 	font-family: 'Concert One', cursive;
+	float: left;
+	
 }
 .right{
 	float: right;
 	display: static;
 	font-family: 'Aldrich', sans-serif;
 }
-.com p{
-	margin-top: 0px;
-	margin-bottom: 0px;
-}
-
 #users_textbox{
-	margin-left: 500px;
-}
-#fill_3 {
-	height: 350px;
-	width: 380px;
-	/*border: solid black 3px;*/
-	display: inline-block;
-	position: static;
-	float: right;
-	margin-left: 3px;
-	margin-top: 56px;
+	margin-left: 350px;
 }
 
 /*signup*/
 #signup{
-	float:right;
+	float: right;
 }
-
 /*sticky footer */
 .wrapper{
   min-height: 130px;
