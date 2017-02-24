@@ -106,6 +106,7 @@ end
 
 get '/feed' do 
 	@post = Post.last
+	@current_login = session[:user_id] && User.find(session[:user_id])
 	# @comment_post = Comments.last
 	# + User.find(params[:username])
 	 # .find(session[:user_id])

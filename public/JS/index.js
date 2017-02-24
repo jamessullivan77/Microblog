@@ -1,7 +1,8 @@
 if (window.location.pathname == '/feed') {
 document.addEventListener("DOMContentLoaded",function(){
 
-window.onload = setInterval(time,1);
+window.onload = setInterval(date, time, username);
+var username = "#username";
 var date = new Date();
 var time = new Date();
 var day = date.getDate();
@@ -40,7 +41,7 @@ if (hours < 10){
 
 
 date = month + "/" + day + "/" + year; 
-time = hours +':'+ minutes+ " " + AM_PM;
+time = hours+':'+minutes+ " " + AM_PM;
 
 var space = document.getElementById("comment_space");
 var submit = document.getElementById("usrSub");
@@ -61,7 +62,7 @@ document.getElementById("comments").addEventListener("submit",
 	 		dataType: "json",
 	 		complete: function(response){
 	 			// to do: update or whatever here...
-	 			var newComment = document.getElementById("users_textbox").value;
+	 			// var newComment = document.getElementById("users_textbox").value;
 
 	 			var elTime = document.createElement("span");
 	 			elTime.innerText = time;
@@ -71,16 +72,32 @@ document.getElementById("comments").addEventListener("submit",
 	 			elDate.innerText = date;
 	 			elDate.className = "above";
 
+	 			var elUsername = document.createElement("span");
+	 			elUsername.innerText = document.getElementById("uname").value;
+	 			elUsername.className = "username";
+
+	 			var elContent = document.createElement("p");
+	 			elContent.innerText = document.getElementById("users_textbox").value;
+	 			elContent.className = "com";			
+	 			// get value of hidden input
+	 			// set innerText of new element
+	 			// give class to element
+
+	 			// clears textbox
 			 	document.getElementById("users_textbox").value =  "";
 
+			 	// builds new comment
 			 	var elNewComment = document.createElement("div");
-
 			 	elNewComment.className = "comment";
 			 	elNewComment.id = "msg_" + (space.querySelectorAll(".comment").length+1)
 
-			 	elNewComment.innerText = newComment;
+			 	// sets content, time and username of new comment
+			 	// elNewComment = newComment;
+
+			 	elNewComment.appendChild(elUsername);
 			 	elNewComment.appendChild(elTime);
-			 	// elNewComment.appendChild(elDate);
+			 	elNewComment.appendChild(elContent);
+			 	// appends new comment to comment area
 			 	space.appendChild(elNewComment);
 	 		}
 	 	});
